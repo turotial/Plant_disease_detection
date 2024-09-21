@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Disease Detection</title>
+    <link rel="stylesheet" href="static\style.css">
+</head>
+<body>
+    <h1>Plant Disease Detection</h1>
+    <form action="/predict" method="post" enctype="multipart/form-data">
+        <label for="image"><h3>Upload an image of a plant leaf:</h3><input type="file" name="image" id="image" accept=".jpg, .jpeg, .png"></label>
+        <!-- <input type="file" name="image" id="image" accept=".jpg, .jpeg, .png"> -->
+        <button type="submit">Predict</button>
+    </form>
+
+    <div id="prediction-result" style="display: none;">
+        <h2>Prediction Result:</h2>
+        <p id="predicted-class"></p>
+    </div>
+
+    <script>
+        // JavaScript code to display prediction result
+        const form = document.querySelector('form');
+        const predictionResult = document.getElementById('prediction-result');
+        const predictedClass = document.getElementById('predicted-class');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            predictionResult.style.display = 'none';
+
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch('/predict', {
+                    method: 'POST',
+                    body: formData,
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    predictedClass.textContent = `Predicted Class: ${data.prediction}`;
+                    predictionResult.style.display = 'block';
+                } else {
+                    console.error('Prediction request failed.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+    </script>
+</body>
+</html>
+
+

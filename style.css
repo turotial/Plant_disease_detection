@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(img2.jpg);
+}
+body {
+    background-image: url('img2.jpg'); /* Replace with the path to your plant image */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the image horizontally and vertically */
+    background-attachment: fixed; /* Fixed background for a scrolling effect */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    font-family: Arial, sans-serif;
+    color: #333; /* Text color on the background */
+}
+
+header {
+    background-color: rgba(169, 219, 52, 0.8); /* Background color for the header with opacity */
+    color: white;
+    text-align: center;
+    padding: 0px;
+}
+
+main {
+    text-align: center;
+    margin: 0px;
+}
+
+/* ...rest of your CSS styles... */
+
+
+header {
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+main {
+    text-align: center;
+    margin: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#image-upload {
+    margin: 10px;
+    color: white;
+}
+
+button {
+    background-color:blue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    align-items: center;
+}
+
+button:hover {
+    background-color: #150ed9;
+}
+
+#prediction-result {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #0f0e0e;
+}
+h1
+{
+    text-align: center;
+    color: #0f0e0e;
+}
+h2
+{
+    text-align: center;
+    color: #0f0e0e;
+}
+#predicted-class
+{
+    text-align: center;
+    color: #0f0e0e;
+}
+h3
+{
+    color: #0f0e0e;
+}
